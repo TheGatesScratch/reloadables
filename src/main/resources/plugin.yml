@@ -1,0 +1,5 @@
+name: Skiller
+version: 0.7.0
+author: TheGates
+api-version: 1.19
+main: com.thegates.reloadablesapi.ReloadablesAPI
