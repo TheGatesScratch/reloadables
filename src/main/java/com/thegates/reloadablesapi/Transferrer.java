@@ -8,24 +8,28 @@ public class Transferrer<T, D> {
 
     private final BiConsumer<T, D> setter;
     private final Consumer<T> remover;
-    private final BiConsumer<D, T> action;
+    private final BiConsumer<T, D> action;
     private final Function<T, D> getter;
 
     public Transferrer(Function<T, D> getter, BiConsumer<T, D> setter, Consumer<T> remover) {
         this(getter, setter, remover, null);
     }
 
-    public Transferrer(Function<T, D> getter, BiConsumer<T, D> setter, Consumer<T> remover, BiConsumer<D, T> action) {
+    public Transferrer(Function<T, D> getter, BiConsumer<T, D> setter, Consumer<T> remover, BiConsumer<T, D> action) {
         this.setter = setter;
         this.remover = remover;
         this.action = action;
         this.getter = getter;
     }
 
+    public D get(T t) {
+        return getter.apply(t);
+    }
+
     public void apply(T onto, D data) {
         set(onto, data);
         if (action != null)
-            action.accept(data, onto);
+            action.accept(onto, data);
     }
 
     public void remove(T from) {

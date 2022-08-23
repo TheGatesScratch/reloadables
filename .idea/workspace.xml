@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b298aa0c-9d9f-4665-a6f4-200a2046cc8a" name="Changes" comment="No unused warning">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/thegates/reloadablesapi/TransferCollection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+    <list default="true" id="b298aa0c-9d9f-4665-a6f4-200a2046cc8a" name="Changes" comment="global transfer">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/thegates/reloadablesapi/ReloadablesAPI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/thegates/reloadablesapi/ReloadablesAPI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/thegates/reloadablesapi/Transferrer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/thegates/reloadablesapi/Transferrer.java" afterDir="false" />
@@ -88,7 +86,35 @@
       <option name="project" value="LOCAL" />
       <updated>1661155981879</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="don't require Transferrer action">
+      <created>1661161935030</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1661161935030</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Create TransferCollection">
+      <created>1661161989288</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1661161989288</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Project settings">
+      <created>1661161998410</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1661161998410</updated>
+    </task>
+    <task id="LOCAL-00007" summary="global transfer">
+      <created>1661162452956</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1661162452956</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -106,6 +132,10 @@
     <MESSAGE value="Initial setup" />
     <MESSAGE value="Move Transferrer, fix naming" />
     <MESSAGE value="No unused warning" />
-    <option name="LAST_COMMIT_MESSAGE" value="No unused warning" />
+    <MESSAGE value="don't require Transferrer action" />
+    <MESSAGE value="Create TransferCollection" />
+    <MESSAGE value="Project settings" />
+    <MESSAGE value="global transfer" />
+    <option name="LAST_COMMIT_MESSAGE" value="global transfer" />
   </component>
 </project>
