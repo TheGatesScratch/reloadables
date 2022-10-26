@@ -17,7 +17,7 @@ public class ReloadablesAPI extends JavaPlugin {
     }
 
     public static <D> Transferrer<ItemStack, D> persistentDataTransferrer(NamespacedKey key, PersistentDataType<?, D> dataType) {
-        return metaTransferrer(new Transferrer<>(m -> m.getPersistentDataContainer().get(key, dataType), (m, d) -> m.getPersistentDataContainer().set(key, dataType, d), m -> m.getPersistentDataContainer().remove(key)));
+        return persistentDataTransferrer(key, dataType, null);
     }
 
     public static <D> Transferrer<ItemStack, D> metaTransferrer(Transferrer<ItemMeta, D> transferrer) {
