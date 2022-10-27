@@ -1,5 +1,6 @@
 package com.thegates.reloadablesapi;
 
+import javax.annotation.Nullable;
 import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 import java.util.function.Function;
@@ -22,7 +23,9 @@ public class Transferrer<T, D> {
         this.getter = getter;
     }
 
+    @Nullable
     public D get(T t) {
+        if (t == null) return null;
         return getter.apply(t);
     }
 
@@ -44,9 +47,5 @@ public class Transferrer<T, D> {
         final D data = getter.apply(from);
         if (data == null) return;
         apply(to, data);
-    }
-
-    public boolean has(T t) {
-        return getter.apply(t) != null;
     }
 }
