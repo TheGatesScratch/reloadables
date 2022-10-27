@@ -13,7 +13,11 @@ import java.util.function.Consumer;
 public class ReloadablesAPI extends JavaPlugin {
 
     public static <D> Transferrer<ItemStack, D> persistentDataTransferrer(NamespacedKey key, PersistentDataType<?, D> dataType, BiConsumer<ItemMeta, D> action) {
-        return metaTransferrer(new Transferrer<>(m -> m.getPersistentDataContainer().get(key, dataType), (m, d) -> m.getPersistentDataContainer().set(key, dataType, d), m -> m.getPersistentDataContainer().remove(key), action));
+        return metaTransferrer(new Transferrer<>(m -> {
+            final var c = m.getPersistentDataContainer();
+            if (c.isEmpty()) return null;
+            return c.get(key, dataType);
+        }, (m, d) -> m.getPersistentDataContainer().set(key, dataType, d), m -> m.getPersistentDataContainer().remove(key), action));
     }
 
     public static <D> Transferrer<ItemStack, D> persistentDataTransferrer(NamespacedKey key, PersistentDataType<?, D> dataType) {
