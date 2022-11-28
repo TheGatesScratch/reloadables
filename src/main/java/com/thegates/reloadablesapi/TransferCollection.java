@@ -4,7 +4,7 @@ import java.util.Collection;
 import java.util.LinkedList;
 
 public class TransferCollection<T, D> implements Transferrer<T, D> {
-    private final Collection<SingleTransferrer<T, D>> singleTransferrers = new LinkedList<>();
+    private final Collection<Transferrer<T, D>> singleTransferrers = new LinkedList<>();
 
     public TransferCollection() {
     }
@@ -14,17 +14,17 @@ public class TransferCollection<T, D> implements Transferrer<T, D> {
         singleTransferrers.addAll(other.singleTransferrers);
     }
 
-    public SingleTransferrer<T, D> add(SingleTransferrer<T, D> transferrer) {
+    public Transferrer<T, D> add(Transferrer<T, D> transferrer) {
         singleTransferrers.add(transferrer);
         return transferrer;
+    }
+
+    public void remove(T from) {
+        singleTransferrers.forEach(t -> t.remove(from));
     }
 
     @Override
     public void transfer(T from, T to) {
         singleTransferrers.forEach(t -> t.transfer(from, to));
-    }
-
-    public void removeAll(T from) {
-        singleTransferrers.forEach(t -> t.remove(from));
     }
 }
