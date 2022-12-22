@@ -3,18 +3,17 @@ package com.thegates.reloadablesapi;
 import java.util.Collection;
 import java.util.LinkedList;
 
-public class TransferCollection<T, D> implements Transferrer<T, D> {
-    private final Collection<Transferrer<T, D>> singleTransferrers = new LinkedList<>();
+public class TransferCollection<T> implements Transferrer<T> {
+    private final Collection<Transferrer<T>> singleTransferrers = new LinkedList<>();
 
     public TransferCollection() {
     }
 
-    public TransferCollection(TransferCollection<T, D> other) {
-        this();
+    public TransferCollection(TransferCollection<T> other) {
         singleTransferrers.addAll(other.singleTransferrers);
     }
 
-    public Transferrer<T, D> add(Transferrer<T, D> transferrer) {
+    public <D> Transferrer<T> add(Transferrer<T> transferrer) {
         singleTransferrers.add(transferrer);
         return transferrer;
     }

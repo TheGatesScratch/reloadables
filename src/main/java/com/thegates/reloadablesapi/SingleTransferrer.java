@@ -5,7 +5,7 @@ import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 import java.util.function.Function;
 
-public class SingleTransferrer<T, D> implements Transferrer<T, D> {
+public class SingleTransferrer<T, D> implements Transferrer<T> {
 
     private final BiConsumer<T, D> setter;
     private final Consumer<T> remover;
