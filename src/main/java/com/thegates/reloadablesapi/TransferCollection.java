@@ -25,7 +25,8 @@ public class TransferCollection<T, D> implements Transferrer<T, D> {
         return to;
     }
 
-    public void remove(T from) {
+    public T remove(T from) {
         singleTransferrers.forEach(t -> t.remove(from));
+        return from;
     }
 }

@@ -29,10 +29,11 @@ public class SingleTransferrer<T, D> implements Transferrer<T, D> {
         return getter.apply(t);
     }
 
-    public void apply(T onto, D data) {
+    public T apply(T onto, D data) {
         set(onto, data);
         if (action != null)
             action.accept(onto, data);
+        return onto;
     }
 
     void set(T t, D data) {
@@ -45,7 +46,8 @@ public class SingleTransferrer<T, D> implements Transferrer<T, D> {
         return to;
     }
 
-    public void remove(T from) {
+    public T remove(T from) {
         remover.accept(from);
+        return from;
     }
 }
