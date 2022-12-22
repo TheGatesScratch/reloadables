@@ -5,13 +5,9 @@ import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.persistence.PersistentDataType;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.function.BiConsumer;
 
 public class ReloadablesAPI extends JavaPlugin {
-
-    private final List<Reloadable> globalReloadables = new ArrayList<>();
 
     public static <D> SingleTransferrer<ItemMeta, D> persistentDataTransferrer(NamespacedKey key, PersistentDataType<?, D> dataType, BiConsumer<ItemMeta, D> action) {
         return new SingleTransferrer<>(m -> {
@@ -23,16 +19,6 @@ public class ReloadablesAPI extends JavaPlugin {
 
     public static <D> SingleTransferrer<ItemMeta, D> persistentDataTransferrer(NamespacedKey key, PersistentDataType<?, D> dataType) {
         return persistentDataTransferrer(key, dataType, null);
-    }
-
-    public void addReloadable(Reloadable reloadable) {
-        globalReloadables.add(reloadable);
-    }
-
-    public synchronized void reloadAll() {
-        for (final Reloadable reloadable : globalReloadables) {
-            reloadable.reload();
-        }
     }
 
     @Override

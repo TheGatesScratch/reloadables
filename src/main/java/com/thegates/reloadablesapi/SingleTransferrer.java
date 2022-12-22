@@ -35,17 +35,17 @@ public class SingleTransferrer<T, D> implements Transferrer<T, D> {
             action.accept(onto, data);
     }
 
-    public void remove(T from) {
-        remover.accept(from);
-    }
-
     void set(T t, D data) {
         setter.accept(t, data);
     }
 
-    public void transfer(T from, T to) {
+    public T transfer(T from, T to) {
         final D data = getter.apply(from);
-        if (data == null) return;
-        apply(to, data);
+        if (data != null) apply(to, data);
+        return to;
+    }
+
+    public void remove(T from) {
+        remover.accept(from);
     }
 }

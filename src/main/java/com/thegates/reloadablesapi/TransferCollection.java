@@ -19,12 +19,13 @@ public class TransferCollection<T, D> implements Transferrer<T, D> {
         return transferrer;
     }
 
-    public void remove(T from) {
-        singleTransferrers.forEach(t -> t.remove(from));
+    @Override
+    public T transfer(T from, T to) {
+        singleTransferrers.forEach(t -> t.transfer(from, to));
+        return to;
     }
 
-    @Override
-    public void transfer(T from, T to) {
-        singleTransferrers.forEach(t -> t.transfer(from, to));
+    public void remove(T from) {
+        singleTransferrers.forEach(t -> t.remove(from));
     }
 }
