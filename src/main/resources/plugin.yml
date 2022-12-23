@@ -1,7 +1,7 @@
 name: ReloadablesAPI
 version: 1.0
-author: TheGates
+author: TheGatesDev
 api-version: 1.19
-main: com.thegates.reloadablesapi.ReloadablesAPI
+main: io.github.thegatesdev.reloadables.ReloadablesAPI
 depend:
   - GateBase

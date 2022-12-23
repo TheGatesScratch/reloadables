@@ -1,4 +1,4 @@
-package com.thegates.reloadablesapi;
+package io.github.thegatesdev.reloadablesapi;
 
 import java.util.Collection;
 import java.util.LinkedList;

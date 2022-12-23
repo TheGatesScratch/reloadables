@@ -1,4 +1,4 @@
-package com.thegates.reloadablesapi;
+package io.github.thegatesdev.reloadablesapi;
 
 import org.bukkit.NamespacedKey;
 import org.bukkit.inventory.meta.ItemMeta;

@@ -1,4 +1,4 @@
-package com.thegates.reloadablesapi;
+package io.github.thegatesdev.reloadablesapi;
 
 import javax.annotation.Nullable;
 import java.util.function.BiConsumer;

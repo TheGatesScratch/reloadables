@@ -1,4 +1,4 @@
-package com.thegates.reloadablesapi;
+package io.github.thegatesdev.reloadablesapi;
 
 public interface Transferrer<T> {
     T transfer(T from, T to);
