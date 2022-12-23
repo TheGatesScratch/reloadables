@@ -3,11 +3,10 @@ package io.github.thegatesdev.reloadablesapi;
 import org.bukkit.NamespacedKey;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.persistence.PersistentDataType;
-import org.bukkit.plugin.java.JavaPlugin;
 
 import java.util.function.BiConsumer;
 
-public class ReloadablesAPI extends JavaPlugin {
+public class ReloadablesAPI {
 
     public static <D> SingleTransferrer<ItemMeta, D> persistentDataTransferrer(NamespacedKey key, PersistentDataType<?, D> dataType, BiConsumer<ItemMeta, D> action) {
         return new SingleTransferrer<>(m -> {
@@ -19,10 +18,5 @@ public class ReloadablesAPI extends JavaPlugin {
 
     public static <D> SingleTransferrer<ItemMeta, D> persistentDataTransferrer(NamespacedKey key, PersistentDataType<?, D> dataType) {
         return persistentDataTransferrer(key, dataType, null);
-    }
-
-    @Override
-    public void onEnable() {
-        getServer().getConsoleSender().sendMessage("[ReloadablesAPI] Ready to reload some stuff ;D");
     }
 }
