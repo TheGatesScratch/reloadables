@@ -6,7 +6,7 @@
 
     <groupId>io.github.thegatesdev</groupId>
     <artifactId>reloadables</artifactId>
-    <version>1.1</version>
+    <version>1.2</version>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
@@ -34,14 +34,4 @@
             </plugin>
         </plugins>
     </build>
-
-    <dependencies>
-        <dependency>
-            <groupId>org.spigotmc</groupId>
-            <artifactId>spigot</artifactId>
-            <version>1.19.3-R0.1-SNAPSHOT</version>
-            <scope>provided</scope>
-        </dependency>
-    </dependencies>
-
 </project>

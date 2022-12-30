@@ -1,6 +1,5 @@
 package io.github.thegatesdev.reloadablesapi;
 
-import javax.annotation.Nullable;
 import java.util.function.BiConsumer;
 import java.util.function.Consumer;
 import java.util.function.Function;
@@ -23,7 +22,6 @@ public class SingleTransferrer<T, D> implements Transferrer<T> {
         this.getter = getter;
     }
 
-    @Nullable
     public D get(T t) {
         if (t == null) return null;
         return getter.apply(t);
