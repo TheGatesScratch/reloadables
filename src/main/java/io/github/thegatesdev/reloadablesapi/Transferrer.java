@@ -1,7 +1,12 @@
 package io.github.thegatesdev.reloadablesapi;
 
 public interface Transferrer<T> {
-    T transfer(T from, T to);
+    <E extends T> E transfer(T from, E to);
 
-    T remove(T from);
+    default <E extends T> E transfer(Iterable<T> from, E to) {
+        for (final T item : from) transfer(item, to);
+        return to;
+    }
+
+    <E extends T> E remove(E from);
 }
